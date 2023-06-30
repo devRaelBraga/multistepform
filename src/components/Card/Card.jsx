@@ -1,11 +1,13 @@
 import styled from 'styled-components'
+import IconArcade from '../../../assets/images/icon-arcade.svg'
+import IconAdvanced from '../../../assets/images/icon-advanced.svg'
+import IconPro from '../../../assets/images/icon-pro.svg'
 
 export default function Card(props){
+    const image = props.icon == 'Arcade' ? IconArcade : props.icon == 'Advanced'? IconAdvanced : IconPro
     return(
         <CardHolder>
-            <Image src={props.icon}></Image>
-            <img src={props.icon} alt="" />
-
+            <Image src={image}></Image>
             
             <Description>
                 <p className='PlanTitle'>

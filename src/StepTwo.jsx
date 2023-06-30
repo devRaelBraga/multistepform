@@ -1,32 +1,31 @@
 import styled from 'styled-components'
 import Card from './components/Card/Card'
-import IconArcade from '../../assets/images/icon-arcade.svg'
-import IconAdvanced from '../../assets/images/icon-advanced.svg'
-import IconPro from '../../assets/images/icon-pro.svg'
-
+import { useState } from 'react';
+import Switch from './components/Toggle/Switch';
 
 export default function StepTwo(options) {
-
     const plans =[
         {
         id: 1,
         title: 'Arcade',
         price: 9,
-        icon:{IconArcade},
+        icon:'Arcade',
     },
     {
         id: 2,
         title: 'Advanced',
         price: 12,
-        icon:{IconAdvanced},
+        icon:'Advanced',
     },
     {
         id: 3,
         title: 'Pro',
         price: 15,
-        icon:{IconPro},
+        icon:'Pro',
         },
 ]
+
+    const [isYearly, setIsYearly] = useState(false)
 
     return (
         <Content>
@@ -40,10 +39,13 @@ export default function StepTwo(options) {
             <div style={{display:'flex', flexDirection:'row', gap:'2vw'}}>
                 {plans.map(item => {
                     return(
-                        <Card price={item.price} isYearly={true} icon={item.icon}> {item.title} </Card>
+                        <Card price={item.price} isYearly={isYearly} icon={item.icon}> {item.title} </Card>
                     )
                 })}
             </div>
+
+
+            <Switch></Switch>
 
             
         </Content>

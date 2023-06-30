@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import desktopSidebarBackground from '../../assets/images/bg-sidebar-desktop.svg'
+import desktopSidebarBackground from '../assets/images/bg-sidebar-desktop.svg'
 
 export const Container = styled.div`
   display: flex;
