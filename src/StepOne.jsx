@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 export default function StepOne(options) {
+    const navigate = useNavigate();
+
     return (
         <Content>
             <Title>
@@ -15,7 +18,7 @@ export default function StepOne(options) {
                 <Label>Phone Number</Label>
                 <Input type="tel" name="phone" placeholder="e.g. +1 234 567 890" />
             </Form>
-            <Button>Next step</Button>
+            <Button onClick={() => navigate('/2')}>Next step</Button>
         </Content>
     )
 }
@@ -78,7 +81,7 @@ const Label = styled.label`
     user-select: none;
 `
 
-const Button = styled.button`
+export const Button = styled.button`
     background-color: hsl(213, 96%, 18%);
     color: white;
     font-weight: 500;

@@ -7,7 +7,7 @@ export default function Item(props){
     return(
     // <Link to={`/${props.step}`} >
         <Passo onClick={ () => navigate(`/${props.step}`) }>
-            <Circulo active={props.active?.toString()} onClick={() => props.setActive(!props.active)}>{props.step}</Circulo>
+            <Circulo $active={props.$active?.toString()} onClick={() => props.setActive(!props.$active)}>{props.step}</Circulo>
             <div>
                 <p style={{ color: 'hsl(229, 24%, 87%)', fontSize: '0.7em', marginBottom: '5px'}}>
                     STEP {props.step}

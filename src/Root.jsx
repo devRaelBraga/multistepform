@@ -14,10 +14,10 @@ export default function Root(){
             <Holder>
                 <Sidebar>
                     <StepHolders>
-                        <Item step={1} active={active1} setActive={setActive1}>YOUR INFO</Item>
-                        <Item step={2} active={active2} setActive={setActive2}>SELECT PLAN</Item>
-                        <Item step={3} active={active3} setActive={setActive3}>ADD-ONS</Item>
-                        <Item step={4} active={active4} setActive={setActive4}>SUMMARY</Item>
+                        <Item step={1} $active={active1} setActive={setActive1}>YOUR INFO</Item>
+                        <Item step={2} $active={active2} setActive={setActive2}>SELECT PLAN</Item>
+                        <Item step={3} $active={active3} setActive={setActive3}>ADD-ONS</Item>
+                        <Item step={4} $active={active4} setActive={setActive4}>SUMMARY</Item>
                     </StepHolders>
                 </Sidebar>
                 <Content>

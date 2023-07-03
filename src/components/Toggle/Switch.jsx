@@ -1,12 +1,18 @@
+import { useEffect } from 'react';
 import styled from 'styled-components'
 
-export default function Switch() {
-    let inputs = document.querySelector('.Input');
+export default function Switch({isYearly, setIsYearly}) {
+    
+    function handleClick(){
+        var inputs = document.querySelector('.Input');
+        inputs.checked = !inputs.checked;
+        setIsYearly(!isYearly);
+    }
 
     return(
         <Toggle htmlFor="">
             <input type="checkbox" className='Input' />
-            <span className="slider" onClick={() => inputs.checked = !inputs.checked }></span>
+            <span className="slider" onClick={() => handleClick()}></span>
         </Toggle>
     )
 
@@ -15,6 +21,10 @@ export default function Switch() {
 const Toggle = styled.label`
     position: relative;
     user-select: none;
+    width: 0;
+    height: 0;
+    top: -14px;
+    left: -18px;
 
 
     .Input {
@@ -29,7 +39,7 @@ const Toggle = styled.label`
         position: absolute;
         top: 0;
         left: 0;
-        width: 55px;
+        width: 56px;
         height: 28px;
 
         background-color: hsl(213, 96%, 18%);
@@ -48,6 +58,6 @@ const Toggle = styled.label`
     }
 
     .Input:checked + .slider:before {
-        transform: translateX(27px);
+        transform: translateX(26px);
     }
 `

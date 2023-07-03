@@ -2,11 +2,12 @@ import styled from 'styled-components'
 import IconArcade from '../../../assets/images/icon-arcade.svg'
 import IconAdvanced from '../../../assets/images/icon-advanced.svg'
 import IconPro from '../../../assets/images/icon-pro.svg'
+import { useState } from 'react'
 
 export default function Card(props){
     const image = props.icon == 'Arcade' ? IconArcade : props.icon == 'Advanced'? IconAdvanced : IconPro
     return(
-        <CardHolder>
+        <CardHolder onClick={() => props.setActive(props.icon)} $active={props.active}>
             <Image src={image}></Image>
             
             <Description>
@@ -27,8 +28,8 @@ export default function Card(props){
         </CardHolder>
     )
 }
-
 const CardHolder = styled.div`
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -36,14 +37,22 @@ const CardHolder = styled.div`
     width: 10vw;
     height: 28vh;
     border-radius: 10px;
-    background-color: white;
-    border: 1px solid hsla(231.42857142857144, 11.1111111111111%, 62.94117647058823%, 0.671);
+    background-color: ${props => props.$active ? 'hsl(217, 100%, 97%)' : 'white'};
+    border: ${props => props.$active ? '1px solid hsl(213, 96%, 18%)' : '1px solid hsla(231.43, 11.1%, 62.94%, 0.671)'};
+    /* border: ; */
+    transition: 300ms all;
 
     .PlanTitle {
         color: hsl(213, 96%, 18%);
         font-weight: 500;
     }
+
+    &:hover {
+        border: 1px solid hsl(213, 96%, 18%);
+        background-color: hsl(217, 100%, 97%);
+    }
     `
+
 
 const Image = styled.img`
     margin: 2vh;
